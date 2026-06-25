@@ -1,0 +1,210 @@
+.contenedor {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 24px 16px 64px;
+}
+
+.encabezado {
+  text-align: center;
+  margin-bottom: 20px;
+
+  h1 {
+    margin: 0;
+    font-size: 1.8rem;
+  }
+}
+
+.fecha-hora {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 8px 0 0;
+  font-size: 1.1rem;
+  color: #94a3b8;
+
+  .dia {
+    text-transform: capitalize;
+  }
+
+  .hora {
+    font-weight: 700;
+    color: #38bdf8;
+  }
+}
+
+.selector-opcion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+
+  .selector-label {
+    color: #94a3b8;
+  }
+
+  .botones {
+    display: flex;
+    gap: 8px;
+  }
+
+  button {
+    padding: 8px 14px;
+    border-radius: 999px;
+    border: 1px solid #334155;
+    background: #1e293b;
+    color: #e2e8f0;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: background 0.2s, border-color 0.2s;
+
+    &:hover {
+      border-color: #38bdf8;
+    }
+
+    &.activo {
+      background: #0ea5e9;
+      border-color: #0ea5e9;
+      color: #0f172a;
+      font-weight: 700;
+    }
+  }
+}
+
+.jornada {
+  text-align: center;
+  margin-bottom: 20px;
+
+  h2 {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+
+  .subtitulo {
+    margin: 4px 0 0;
+    color: #94a3b8;
+  }
+}
+
+.ahora-card {
+  background: linear-gradient(135deg, #0ea5e9, #6366f1);
+  border-radius: 16px;
+  padding: 18px 20px;
+  margin-bottom: 28px;
+  box-shadow: 0 8px 24px rgba(14, 165, 233, 0.25);
+
+  .ahora-label {
+    display: block;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    opacity: 0.85;
+    margin-bottom: 8px;
+  }
+
+  .ahora-contenido {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .ahora-icono {
+    font-size: 2.2rem;
+  }
+
+  h3 {
+    margin: 0 0 4px;
+    font-size: 1.15rem;
+  }
+
+  p {
+    margin: 0;
+    opacity: 0.9;
+  }
+}
+
+.linea-tiempo {
+  list-style: none;
+  margin: 0 0 32px;
+  padding: 0;
+  border-left: 2px solid #334155;
+
+  li {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px 0 10px 20px;
+    margin-left: -1px;
+    border-left: 2px solid transparent;
+    opacity: 0.65;
+    transition: opacity 0.2s;
+
+    .hora {
+      flex-shrink: 0;
+      width: 48px;
+      font-weight: 600;
+      color: #94a3b8;
+    }
+
+    .icono {
+      font-size: 1.3rem;
+    }
+
+    .detalle {
+      strong {
+        display: block;
+      }
+
+      p {
+        margin: 2px 0 0;
+        font-size: 0.9rem;
+        color: #94a3b8;
+      }
+    }
+
+    &.activo {
+      opacity: 1;
+      border-left-color: #38bdf8;
+      background: rgba(56, 189, 248, 0.08);
+      border-radius: 8px;
+
+      .hora {
+        color: #38bdf8;
+      }
+    }
+  }
+}
+
+.reglas {
+  h2 {
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  .regla {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: #1e293b;
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+
+    .regla-emoji {
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+
+    strong {
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: #94a3b8;
+    }
+  }
+}

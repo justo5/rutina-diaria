@@ -1,0 +1,73 @@
+<main class="contenedor">
+  <header class="encabezado">
+    <h1>Mi Rutina</h1>
+    <p class="fecha-hora">
+      <span class="dia">{{ diaNombre() }}</span>
+      <span class="hora">{{ horaActual() }}</span>
+    </p>
+  </header>
+
+  @if (esDiaHomeOffice()) {
+    <div class="selector-opcion">
+      <span class="selector-label">¿Hay olas hoy?</span>
+      <div class="botones">
+        <button
+          type="button"
+          [class.activo]="opcionHome() === 'A'"
+          (click)="elegirOpcion('A')"
+        >
+          🏄 Sí, hay olas
+        </button>
+        <button
+          type="button"
+          [class.activo]="opcionHome() === 'B'"
+          (click)="elegirOpcion('B')"
+        >
+          ❌ No hay olas
+        </button>
+      </div>
+    </div>
+  }
+
+  <section class="jornada">
+    <h2>{{ jornada().emoji }} {{ jornada().nombre }}</h2>
+    <p class="subtitulo">{{ jornada().subtitulo }}</p>
+  </section>
+
+  <section class="ahora-card">
+    <span class="ahora-label">Ahora toca</span>
+    <div class="ahora-contenido">
+      <span class="ahora-icono">{{ bloqueActual().icono }}</span>
+      <div>
+        <h3>{{ bloqueActual().titulo }}</h3>
+        <p>{{ bloqueActual().descripcion }}</p>
+      </div>
+    </div>
+  </section>
+
+  <ol class="linea-tiempo">
+    @for (bloque of jornada().bloques; track bloque.hora; let i = $index) {
+      <li [class.activo]="esBloqueActual(i)">
+        <span class="hora">{{ bloque.hora }}</span>
+        <span class="icono">{{ bloque.icono }}</span>
+        <div class="detalle">
+          <strong>{{ bloque.titulo }}</strong>
+          <p>{{ bloque.descripcion }}</p>
+        </div>
+      </li>
+    }
+  </ol>
+
+  <section class="reglas">
+    <h2>⚡ 3 Reglas de Oro</h2>
+    @for (regla of reglas; track regla.titulo) {
+      <article class="regla">
+        <span class="regla-emoji">{{ regla.emoji }} {{ regla.icono }}</span>
+        <div>
+          <strong>{{ regla.titulo }}</strong>
+          <p>{{ regla.descripcion }}</p>
+        </div>
+      </article>
+    }
+  </section>
+</main>
